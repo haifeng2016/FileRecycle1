@@ -1,0 +1,42 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/tav</item>
+        <item name="actionMenuTextColor">@drawable/actionbar_menu_item</item>
+        <item name="android:actionButtonStyle">@style/AppTheme.ActionButton</item>
+        <!--<item name="actionOverflowButtonStyle">@style/OverFlow</item>-->
+        <item name="actionButtonStyle">@style/AppTheme.ActionButton</item>
+        <item name="android:actionBarItemBackground">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:fontFamily">sec-roboto-condensed</item>
+    </style>
+
+    <style name="AppTheme.ActionButton" parent="Widget.AppCompat.ActionButton">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">font_sans_serif_condensed</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="AppTheme.ActionBarTitle" parent="@android:style/TextAppearance.DeviceDefault.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/tar</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">sec-roboto-condensed</item>
+        <item name="android:alpha">0.9</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--菜单栏overflow那三个点替换成其他图标-->
+    <!--<style name="OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">-->
+        <!--<item name="android:src">@drawable/newmenu</item>-->
+    <!--</style>-->
+
+</resources>

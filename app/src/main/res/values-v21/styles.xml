@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/g</item>
+        <item name="colorPrimaryDark">@color/ax</item>
+        <item name="colorAccent">@color/ax</item>
+
+        <item name="android:colorControlActivated">@color/ax</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/image_popup_dim</item>
+    </style>
+</resources>

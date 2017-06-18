@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/musiclistitem"
+    android:paddingBottom="3dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingStart="10dp">
+
+    <RelativeLayout
+        android:id="@+id/musicselectlayout"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:paddingBottom="3dp"
+        android:paddingRight="18dp"
+        android:paddingTop="3dp"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/musicselecectcheckbox"
+            android:layout_width="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/musicicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/musicselecectcheckbox"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/music"/>
+
+        <TextView
+            android:id="@+id/musicsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45KB"
+            android:textColor="#000000"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:id="@+id/musicname_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/musicicon"
+            android:paddingStart="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_centerVertical="true" >
+
+            <TextView
+                android:id="@+id/musicname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="成都"/>
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/b"
+                android:alpha="0.8"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="赵雷" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/dividerview"
+        android:layout_width="match_parent"
+        android:layout_height="3px"
+        android:layout_marginEnd="9dp"
+        android:alpha="0.1"
+        android:background="@color/a" />
+
+</LinearLayout>

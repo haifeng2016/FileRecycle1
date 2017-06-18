@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:background="@color/g"
+        android:contentInsetStart="0dp"
+        android:theme="@style/AppTheme.ActionBar"
+        app:contentInsetStart="0dp"
+        android:elevation="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:titleTextAppearance="@style/AppTheme.ActionBarTitle" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4px"
+        android:layout_alignBottom="@id/toolbar"
+        android:focusable="false"
+        android:alpha="0.07"
+        android:background="@color/a" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <include
+            android:id="@+id/picture_layout"
+            layout="@layout/view_recycler_type_layout" />
+
+        <include
+            android:id="@+id/video_layout"
+            layout="@layout/view_recycler_type_layout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/audio_layout"
+            layout="@layout/view_recycler_type_layout" />
+
+        <include
+            android:id="@+id/doc_layout"
+            layout="@layout/view_recycler_type_layout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/app_layout"
+            layout="@layout/view_recycler_type_layout" />
+
+        <include
+            android:id="@+id/others_layout"
+            layout="@layout/view_recycler_type_layout" />
+    </LinearLayout>
+
+</LinearLayout>

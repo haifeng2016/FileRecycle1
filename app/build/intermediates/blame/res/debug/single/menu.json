@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\menu\\navigation.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\menu\\navigation.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\menu\\show_image_menu.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\menu\\show_image_menu.xml"
+    }
+]

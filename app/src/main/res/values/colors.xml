@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="a">#000000</color>
+    <color name="b">#6b6f72</color>
+    <color name="c">#bdbdbd</color>
+    <color name="d">#d5d5d5</color>
+    <color name="e">#eaeaea</color>
+    <color name="f">#f0f0f0</color>
+    <color name="g">#fafafa</color>
+    <color name="h">#009a6c</color>
+    <color name="i">#01b69f</color>
+    <color name="j">#64e0e5</color>
+    <color name="k">#5b3d15</color>
+    <color name="l">#ffce09</color>
+    <color name="m">#ffea57</color>
+    <color name="n">#44e9b1</color>
+    <color name="o">#00c087</color>
+    <color name="p">#dbe2e4</color>
+    <color name="q">#fff47c</color>
+    <color name="r">#0c7eb4</color>
+    <color name="s">#b39b84</color>
+    <color name="t">#f2f2f2</color>
+    <color name="u">#39ca98</color>
+    <color name="v">#e3e0e0</color>
+    <color name="w">#53c259</color>
+    <color name="x">#eca638</color>
+    <color name="y">#51c3db</color>
+    <color name="z">#d7d7d7</color>
+    <color name="aa">#45bf10</color>
+    <color name="ab">#eec1a9</color>
+    <color name="ac">#ee5503</color>
+    <color name="ad">#e8e0c5</color>
+    <color name="ae">#ffc401</color>
+    <color name="af">#38bb92</color>
+    <color name="ag">#4f827a</color>
+    <color name="ah">#ffffff</color>
+    <color name="ai">#66837b</color>
+    <color name="aj">#e9ebed</color>
+    <color name="ak">#009885</color>
+    <color name="al">#56c0e5</color>
+    <color name="am">#afafaf</color>
+    <color name="ao">#36be1f</color>
+    <color name="ap">#caebf4</color>
+    <color name="aq">#737373</color>
+    <color name="ar">#3fc2b1</color>
+    <color name="as">#4e4f50</color>
+    <color name="at">#575757</color>
+    <color name="au">#252525</color>
+    <color name="av">#51b0d3</color>
+    <color name="aw">#efefef</color>
+    <color name="ax">#00b3e3</color>
+    <color name="ay">#6ebd52</color>
+    <color name="az">#4Dfafafa</color>
+    <color name="ba">#99000000</color>
+    <color name="bb">#7ccae1</color>
+    <color name="bc">#f4af93</color>
+    <color name="bd">#8bd8ed</color>
+    <color name="be">#01adcd</color>
+    <color name="bf">#26252525</color>
+    <color name="bg">#A6000000</color>
+    <color name="bh">#66252525</color>
+    <color name="bi">#dd2c00</color>
+    <color name="ta">#000000</color>
+    <color name="tb">#313131</color>
+    <color name="tc">#6b6f72</color>
+    <color name="td">#666666</color>
+    <color name="te">#b1a8a0</color>
+    <color name="tf">#fafafa</color>
+    <color name="tg">#39ca98</color>
+    <color name="th">#7bb9b7</color>
+    <color name="ti">#592c78</color>
+    <color name="tj">#2d4d9e</color>
+    <color name="tk">#3d9ad0</color>
+    <color name="tl">#15c8f5</color>
+    <color name="tm">#e6b110</color>
+    <color name="tn">#ffea57</color>
+    <color name="to">#fff724</color>
+    <color name="tp">#e9e8e8</color>
+    <color name="tq">#6f563f</color>
+    <color name="tr">#d8d8d8</color>
+    <color name="ts">#fff47c</color>
+    <color name="tt">#3f937a</color>
+    <color name="tu">#65ff86</color>
+    <color name="tv">#a6a6a6</color>
+    <color name="tw">#c6905c</color>
+    <color name="tx">#86898b</color>
+    <color name="ty">#939393</color>
+    <color name="tz">#0094b0</color>
+    <color name="taa">#878787</color>
+    <color name="tab">#00a873</color>
+    <color name="tac">#008b2b</color>
+    <color name="tad">#f7f7f7</color>
+    <color name="tae">#cecece</color>
+    <color name="taf">#2999e0</color>
+    <color name="tag">#08b49a</color>
+    <color name="tah">#00865c</color>
+    <color name="tai">#545454</color>
+    <color name="taj">#38bb92</color>
+    <color name="tal">#eceef0</color>
+    <color name="tan">#e9752a</color>
+    <color name="tao">#6651c3db</color>
+    <color name="tap">#b41212</color>
+    <color name="taq">#707070</color>
+    <color name="tar">#252525</color>
+    <color name="tas">#51b0d3</color>
+    <color name="tat">#b2fafafa</color>
+    <color name="tau">#42acd3</color>
+    <color name="tav">#646464</color>
+    <color name="taw">#eeeeee</color>
+    <color name="tax">#547e73</color>
+    <color name="tay">#f5f5f5</color>
+    <color name="taz">#838383</color>
+    <color name="tba">#1b1b1b</color>
+    <color name="tbc">#00000000</color>
+    <color name="tbd">#300d5549</color>
+    <color name="tbe">#30fafafa</color>
+    <color name="tbf">#919799</color>
+    <color name="tbi">#f68826</color>
+    <color name="tbj">#3fb591</color>
+    <color name="tbk">#3f252525</color>
+    <color name="tbl">#979797</color>
+    <color name="tbm">#8d8d8d</color>
+    <color name="tbn">#656565</color>
+    <color name="tbo">#80252525</color>
+    <color name="tbp">#505050</color>
+    <color name="tbq">#6fc651</color>
+    <color name="tbr">#f77f31</color>
+    <color name="tbs">#767676</color>
+    <color name="tbt">#4f93e9</color>
+    <color name="tbu">#ec9702</color>
+    <color name="tbv">#499ebd</color>
+    <color name="tbw">#a3a3a3</color>
+    <color name="tbx">#e63d414a</color>
+    <color name="tby">#00b3e3</color>
+    <color name="tbz">#969696</color>
+    <color name="tca">#676d7a</color>
+    <color name="tcb">#787878</color>
+    <color name="tcc">#6ebd52</color>
+    <color name="tce">#B3252525</color>
+    <color name="tcf">#ffffff</color>
+    <color name="tci">#19bae5</color>
+    <color name="tcj">#ef815b</color>
+    <color name="tck">#dd2c00</color>
+    <color name="tcl">#757575</color>
+    <color name="tcm">#1428a0</color>
+
+    <color name="delimeter">#e6e6e6</color>
+    <color name="winset_card_bg">#ebebeb</color>
+    <color name="winset_card_stroke">#c8c8c8</color>
+    <color name="color_control_highlight">#40ffffff</color>
+    <color name="image_popup_dim">#30000000</color>
+    <color name="statusbar_bg">#007540</color>
+    <color name="feedbacks_top_button_divider">#b9b9b9</color>
+    <color name="category_icon_bg">#e1f3f1</color>
+
+    <color name="winset_dialog_divider">#d9d9d9</color>
+    <color name="winset_view_pager_bullet_on">#fffafafa</color>
+    <color name="winset_view_pager_bullet_off">#7ffafafa</color>
+    <color name="winset_view_pager_bullet_on_winset_default">#ff737373</color>
+    <color name="winset_view_pager_bullet_off_winset_default">#3f737373</color>
+    <color name="winset_hyper_link_text_color">#0070d2</color>
+    <color name="winset_actionbar_title">#252525</color>
+    <color name="winset_actionbar_icon_color">#E5252525</color>
+    <!--The same with color g -->
+    <color name="winset_actionbar_icon_color_new">#fafafa</color>
+    <color name="winset_actionbar_bottom_divider">#d4d4d4</color>
+    <color name="flatbtn_prev_next_normal">#D9252525</color>
+    <color name="flatbtn_prev_next_dim">#4A252525</color>
+
+    <color name="go_to_top">#ccf0f0f0</color>
+    <color name="go_to_top_stroke">#4d252525</color>
+    <color name="go_to_top_ripple">#14252525</color>
+
+    <color name="primary_color">#00b3e3</color>
+    <color name="edge_effect_color">#1400b3e3</color>
+    <color name="checkbox_tint_color">#56c0e5</color>
+    <color name="news_and_tips_list_item_divider">#e6e6e6</color>
+    <color name="winset_divider">#e6e6e6</color>
+
+    <color name="accessibility_button_shape_solid">#1cffffff</color>
+    <color name="accessibility_button_shape_stroke">#1e000000</color>
+
+    <color name="grace_actionbar_back">#01b69f</color>
+
+    <color name="hw_diagnosis_battery_very_low_graph">#ee5506</color>
+    <color name="hw_diagnosis_battery_low_graph">#f8b500</color>
+
+    <color name="setting_guide_frame_normal">#01b69f</color>
+    <color name="grace_edit_text_hint_color">#55252525</color>
+
+    <color name="tw_switch_dim_mtrl">#ebebeb</color>
+    <color name="tw_switch_track_off_mtrl">#b3d0d0d0</color>
+    <color name="tw_switch_track_dim_mtrl">#66d0d0d0</color>
+
+    <color name="winset_action_button_normal">#01b69f</color>
+    <color name="winset_action_button_dim">#6601b69f</color>
+
+    <color name="dialog_item_title">@color/tar</color>
+    <color name="dialog_item_summary">@color/tbl</color>
+
+    <color name="black_15p">#26000000</color>
+
+    <color name="home_support_card_hw_diagnosis_battery_remiain">#64b548</color>
+    <color name="home_support_card_ram_storage_storage_remiain">#fa875a</color>
+
+    <color name="diagnostics_tab_intro">#5affffff</color>
+    <color name="diagnotics_grid_border">#37252525</color>
+
+    <color name="accent">@color/tby</color>
+    <color name="text_shadow">#33000000</color>
+
+    <color name="home_card_notice_title">#252525</color>
+    <color name="home_card_notice_summary">#979797</color>
+
+    <color name="news_and_tips_thumbnail_overlay">#4d252525</color>
+
+    <color name="winset_navigation_bar_white">#f5f5f5</color>
+    <color name="basic_text_title">#252525</color>
+    <color name="basic_text_desc">#979797</color>
+
+    <color name="winset_subheader_text_color">#505050</color>
+
+    <color name="news_and_tips_indicator_news">#0077c8</color>
+    <color name="news_and_tips_indicator_tips">#813fca</color>
+
+    <color name="diagnosis_icon_color">#646464</color>
+    <color name="diagnosis_state_good">#00b3e3</color>
+    <color name="diagnosis_state_bad">#ef815b</color>
+
+    <!--for CHN background/image/etc-->
+    <color name="ca">#cecece</color>
+
+    <!--for Wechat green-->
+    <color name="wechargreen">#46c01b</color>
+
+    <!--galaxy care blue-->
+    <color name="sm_blue">#00b3e3</color>
+
+</resources>

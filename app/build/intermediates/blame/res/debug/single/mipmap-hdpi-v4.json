@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\gallery.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\gallery.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\video.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\video.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\music.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\music.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\other.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\other.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\brokenfiles.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\brokenfiles.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\word.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\word.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\recycle.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\recycle.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\application.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\application.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\doc.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\doc.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\filerecycleemptyicon.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\filerecycleemptyicon.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher_round.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\audio.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\audio.png"
+    }
+]

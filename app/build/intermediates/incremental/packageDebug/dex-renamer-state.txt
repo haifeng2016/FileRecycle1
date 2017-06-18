@@ -1,0 +1,7 @@
+#Sun Jun 11 22:14:38 CST 2017
+base.0=E\:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c71e0f4236b17145c37ae71c44e9ec5fd0435a5f
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=E\:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_ec8e513ae81d816abc817379978e77f3eb188672\\classes.dex
+base.1=E\:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_ec8e513ae81d816abc817379978e77f3eb188672
+file.0=E\:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c71e0f4236b17145c37ae71c44e9ec5fd0435a5f\\classes.dex

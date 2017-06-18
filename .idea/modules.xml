@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FileRecycle.iml" filepath="$PROJECT_DIR$/FileRecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fcpermission/fcpermission.iml" filepath="$PROJECT_DIR$/fcpermission/fcpermission.iml" />
+    </modules>
+  </component>
+</project>
