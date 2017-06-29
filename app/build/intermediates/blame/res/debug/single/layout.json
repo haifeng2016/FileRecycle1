@@ -1,11 +1,11 @@
 [
     {
-        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_toolbar_container.xml",
-        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\activity_toolbar_container.xml"
-    },
-    {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
         "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_toolbar_container.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\activity_toolbar_container.xml"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\grid_child_item.xml",
@@ -44,6 +44,10 @@
         "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_show_video.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_show_video.xml"
+    },
+    {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
@@ -64,12 +68,12 @@
         "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_show_image.xml",
-        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_show_image.xml"
-    },
-    {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_show_doc.xml",
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_show_doc.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_show_image.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_show_image.xml"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
@@ -92,8 +96,8 @@
         "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_other_files.xml",
-        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_other_files.xml"
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_show_app.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_show_app.xml"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
@@ -108,6 +112,14 @@
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\view_show_music_listitem.xml"
     },
     {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_show_video_listitem.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\view_show_video_listitem.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_show_other_files.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_show_other_files.xml"
+    },
+    {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
         "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\notification_template_lines_media.xml"
     },
@@ -118,10 +130,6 @@
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
-        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\grid_group_item.xml",
-        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\grid_group_item.xml"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings.xml",
@@ -150,6 +158,10 @@
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_privacy.xml",
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_privacy.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_show_app_listitem.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\view_show_app_listitem.xml"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
@@ -194,6 +206,10 @@
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
         "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_show_other_files_listitem.xml",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\view_show_other_files_listitem.xml"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",

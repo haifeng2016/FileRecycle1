@@ -13,7 +13,7 @@ public interface IMainPresenter {
     List<FileBean> getBackupFiles(int type);
     int recoverFiles(List<FileBean> list);
     int deleteFiles(List<FileBean> list);
-    int setFileWatcherType(String type[]);
-    int setAutoDeleteTime(int time);
+    int setFileWatcherType(int[] type, boolean[] set);
+    int setAutoDeleteTime(long time);
     int setPresenterListener(OnMainPresenterListener listener);
 }

@@ -25,7 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.samsung.android.filerecycle.launcher.LauncherActivity"
+            android:name="com.samsung.android.filerecycle.main.LauncherActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -50,7 +50,7 @@
             android:name="com.samsung.android.filerecycle.license.LicenseActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.samsung.android.filerecycle.main.ShowImageActivity"
+            android:name="com.samsung.android.filerecycle.image.ShowImageActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.samsung.android.filerecycle.setting.SettingsActivity"
@@ -64,6 +64,15 @@
         <activity
             android:name="com.samsung.android.filerecycle.otherfiles.ShowOtherFilesActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.samsung.android.filerecycle.music.ShowMusicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.samsung.android.filerecycle.video.ShowVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.samsung.android.filerecycle.app.ShowAppActivity"
+            android:screenOrientation="portrait" />
 
         <service
             android:name="com.samsung.android.recoveryfile.mainpresenter.MainPresenterService"
@@ -71,67 +80,76 @@
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService000"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService000" />
+            android:process="com.samsung.android.recoveryfile.Worker000" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService001"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService001" />
+            android:process="com.samsung.android.recoveryfile.Worker001" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService002"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService002" />
+            android:process="com.samsung.android.recoveryfile.Worker002" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService003"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService003" />
+            android:process="com.samsung.android.recoveryfile.Worker003" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService004"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService004" />
+            android:process="com.samsung.android.recoveryfile.Worker004" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService005"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService005" />
+            android:process="com.samsung.android.recoveryfile.Worker005" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService006"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService006" />
+            android:process="com.samsung.android.recoveryfile.Worker006" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService007"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService007" />
+            android:process="com.samsung.android.recoveryfile.Worker007" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService008"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService008" />
+            android:process="com.samsung.android.recoveryfile.Worker008" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService009"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService009" />
+            android:process="com.samsung.android.recoveryfile.Worker009" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService010"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService010" />
+            android:process="com.samsung.android.recoveryfile.Worker010" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService011"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService011" />
+            android:process="com.samsung.android.recoveryfile.Worker011" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService012"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService012" />
+            android:process="com.samsung.android.recoveryfile.Worker012" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService013"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService013" />
+            android:process="com.samsung.android.recoveryfile.Worker013" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService014"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService014" />
+            android:process="com.samsung.android.recoveryfile.Worker014" />
         <service
             android:name="com.samsung.android.recoveryfile.modelfileworker.FileWorkerService015"
             android:enabled="true"
-            android:process="com.example.samsung.modelfileworker.WorkerService015" />
+            android:process="com.samsung.android.recoveryfile.Worker015" />
+
+        <receiver android:name="com.samsung.android.recoveryfile.mainpresenter.MainPresenterService$MyInstalledReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

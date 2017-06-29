@@ -1,9 +1,9 @@
 package com.samsung.android.filerecycle.doc;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,9 +16,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.samsung.android.filerecycle.R;
+import com.samsung.android.filerecycle.common.BaseFragment;
 import com.samsung.android.filerecycle.common.IBasicAction;
 import com.samsung.android.filerecycle.common.RecycleApplication;
-import com.samsung.android.filerecycle.common.BaseFragment;
 import com.samsung.android.recoveryfile.mainpresenter.FileBean;
 import com.samsung.android.recoveryfile.mainpresenter.MainPresenter;
 import com.samsung.android.recoveryfile.mainpresenter.OnMainPresenterListener;
@@ -35,8 +35,7 @@ import java.util.Set;
 public class ShowDocFragment extends BaseFragment implements IBasicAction {
 
     private List<FileBean> mFileList;
-    private List<ListFileBean> mDocList;
-    protected Handler mHandler = new Handler(Looper.getMainLooper());
+    private List<DocListFileBean> mDocList;
     private MainPresenter mPresenter;
     protected MenuItem recycleMenuItem;
     protected MenuItem deleteMenuItem;
@@ -44,7 +43,7 @@ public class ShowDocFragment extends BaseFragment implements IBasicAction {
     private Set<FileBean> mSelectedDoc = new HashSet<>();
     private ShowDocActivity docActivity = null;
 
-    private CommonListAdapter mListAdapter;
+    private DocListAdapter mListAdapter;
     protected View mMainView;
 
     private OnMainPresenterListener onMainPresenterListener = new OnMainPresenterListener() {
@@ -57,8 +56,10 @@ public class ShowDocFragment extends BaseFragment implements IBasicAction {
             mSelectedDoc.clear();
             mListAdapter.update();
             deleteMenuItem.setVisible(false);
+            if (mFileList.size() <= 0) {
+                mListAdapter.updateCheckboxList();
+            }
             updateOptionsMenu();
-            Log.e("RecycleDebug", "onDeleteFile");
         }
 
         @Override
@@ -66,8 +67,10 @@ public class ShowDocFragment extends BaseFragment implements IBasicAction {
             mSelectedDoc.clear();
             mListAdapter.update();
             recycleMenuItem.setVisible(false);
+            if (mFileList.size() <= 0) {
+                mListAdapter.updateCheckboxList();
+            }
             updateOptionsMenu();
-            Log.e("RecycleDebug", "onRecoverFile");
         }
 
         @Override
@@ -90,7 +93,7 @@ public class ShowDocFragment extends BaseFragment implements IBasicAction {
         mMainView = inflater.inflate(R.layout.fragment_show_doc, container, false);
 
         setHasOptionsMenu(true);
-        title = mContext.getString(R.string.select_pic);
+        title = mContext.getString(R.string.select_doc);
 
         mPresenter = MainPresenter.getInstance(getActivity());
         mPresenter.setPresenterListener(onMainPresenterListener);
@@ -99,9 +102,9 @@ public class ShowDocFragment extends BaseFragment implements IBasicAction {
         RecyclerView recyclerView = (RecyclerView) mMainView.findViewById(R.id.docrecycleview);
         recyclerView.setLayoutManager(new LinearLayoutManager(RecycleApplication.getApplication()));
         recyclerView.setHasFixedSize(true);
-        mListAdapter = new CommonListAdapter(RecycleApplication.getApplication(), mDocList);
+        mListAdapter = new DocListAdapter(this, mFileList);
         recyclerView.setAdapter(mListAdapter);
-        mListAdapter.setOnItemClick(new CommonListAdapter.IItemAction() {
+        mListAdapter.setOnItemClick(new DocListAdapter.IItemAction() {
             @Override
             public void itemClick(int pos, String path) {
                 Log.d("ShowDocFragment", "itemClick " + pos + " " + path);
@@ -109,6 +112,12 @@ public class ShowDocFragment extends BaseFragment implements IBasicAction {
         });
         updateActionBar();
         return mMainView;
+    }
+
+    @Override
+    public void onFileSelected(FileBean fileBean, boolean checked) {
+        updateSelectedImagesList(fileBean, checked);
+        updateOptionsMenu();
     }
 
     @Override
@@ -135,21 +144,40 @@ public class ShowDocFragment extends BaseFragment implements IBasicAction {
                 Toast.makeText(getActivity(),"已恢复 "+mSelectedDoc.size()+" 个文件",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_delete:
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        List<FileBean> files = new ArrayList<>();
-                        files.addAll(mSelectedDoc);
-                        mPresenter.deleteFiles(files);
-                    }
-                });
-                Toast.makeText(getActivity(),"已删除 "+mSelectedDoc.size()+" 个文件",Toast.LENGTH_SHORT).show();
+                showDeleteMessage();
                 break;
             default:
                 Toast.makeText(getActivity(),"请选择文件进行恢复或删除",Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;
+    }
+
+    //当用户点击了“删除”按键后，弹框提示是否真需要删除，避免误操作
+    private void showDeleteMessage() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("提示");
+        builder.setMessage("确定要删除这些文件吗？点击【确定】后文件将被彻底删除！");
+        builder.setPositiveButton("确定",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        mHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                List<FileBean> files = new ArrayList<>();
+                                files.addAll(mSelectedDoc);
+                                mPresenter.deleteFiles(files);
+                            }
+                        });
+                        Toast.makeText(getActivity(), "已彻底删除 "+ mSelectedDoc.size()+" 个文件",Toast.LENGTH_SHORT).show();
+                    }
+                });
+        builder.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                });
+        builder.show();
     }
 
     protected void updateOptionsMenu() {
@@ -185,7 +213,6 @@ public class ShowDocFragment extends BaseFragment implements IBasicAction {
                 mFileList = new ArrayList<>();
             }
             mFileList.clear();
-            Log.d("ShowDocFragment", "initArgs type " + type);
             mFileList = mPresenter.getBackupFiles(type);
         }
     }
@@ -194,24 +221,27 @@ public class ShowDocFragment extends BaseFragment implements IBasicAction {
         if (mDocList == null) {
             mDocList = new ArrayList<>();
         }
-        Log.d("ShowDocFragment", "initDocList()");
         mDocList.clear();
         if (mFileList != null) {
             for (int i = 0; i < mFileList.size(); i++) {
-                mDocList.add(i, new ListFileBean(
+                mDocList.add(i, new DocListFileBean(
                         mFileList.get(i).getName(),
-                        mFileList.get(i).getDelTime().toString(),
+                        mFileList.get(i).getDelTime(),
                         mFileList.get(i).getSize() + "",
                         mFileList.get(i).getSrcPath()));
-                Log.d("ShowDocFragment","mDocList");
             }
         }
+        mSelectedDoc.clear();
     }
 
     @Override
     public boolean onBackAction() {
         if (mListAdapter.getCheckVisible()) {
             mListAdapter.updateCheckboxList();
+            if (mSelectedDoc != null) {
+                mSelectedDoc.clear();
+                updateOptionsMenu();
+            }
             return true;
         }
         return false;

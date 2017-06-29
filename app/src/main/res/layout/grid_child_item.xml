@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
-    <com.samsung.android.filerecycle.main.MyImageView
+    <com.samsung.android.filerecycle.image.MyImageView
         android:id="@+id/child_image"
         android:layout_width="match_parent"
         android:layout_height="100dp"

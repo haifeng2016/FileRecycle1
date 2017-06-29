@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:2:1-127:12
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:2:1-144:12
 	package
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:3:5-46
 		INJECTED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml
@@ -26,7 +26,7 @@ ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:7:5-
 	android:name
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:7:22-77
 application
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:9:5-125:19
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:9:5-142:19
 MERGED from [FileRecycle:fcpermission:unspecified] E:\AndroidWorkSpace\FileRecycle\fcpermission\build\intermediates\bundles\default\AndroidManifest.xml:12:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Administrator.ADMIN-20170608R\.android\build-cache\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Administrator.ADMIN-20170608R\.android\build-cache\768cf37bd16ca86f25588fbe0234749249eab159\output\AndroidManifest.xml:26:5-20
@@ -52,14 +52,14 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Administrator.A
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:16:9-40
 	android:name
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:10:9-50
-activity#com.samsung.android.filerecycle.launcher.LauncherActivity
+activity#com.samsung.android.filerecycle.main.LauncherActivity
 ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:17:9-26:20
 	android:screenOrientation
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:20:13-49
 	android:label
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:19:13-45
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:18:13-54
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:18:13-50
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
@@ -100,12 +100,12 @@ ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:39:9
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:41:13-49
 	android:name
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:40:13-52
-activity#com.samsung.android.filerecycle.main.ShowImageActivity
+activity#com.samsung.android.filerecycle.image.ShowImageActivity
 ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:42:9-44:52
 	android:screenOrientation
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:44:13-49
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:43:13-51
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:43:13-52
 activity#com.samsung.android.filerecycle.setting.SettingsActivity
 ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:45:9-47:52
 	android:screenOrientation
@@ -119,151 +119,187 @@ ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:48:9
 	android:name
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:49:13-46
 activity#com.samsung.android.filerecycle.doc.ShowDocActivity
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:51:9-53:51
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:51:9-53:52
 	android:screenOrientation
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:53:13-49
 	android:name
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:52:13-48
 activity#com.samsung.android.filerecycle.otherfiles.ShowOtherFilesActivity
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:54:9-56:51
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:54:9-56:52
 	android:screenOrientation
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:56:13-49
 	android:name
 		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:55:13-62
+activity#com.samsung.android.filerecycle.music.ShowMusicActivity
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:57:9-59:52
+	android:screenOrientation
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:59:13-49
+	android:name
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:58:13-52
+activity#com.samsung.android.filerecycle.video.ShowVideoActivity
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:60:9-62:52
+	android:screenOrientation
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:62:13-49
+	android:name
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:61:13-52
+activity#com.samsung.android.filerecycle.app.ShowAppActivity
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:63:9-65:52
+	android:screenOrientation
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:65:13-49
+	android:name
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:64:13-48
 service#com.samsung.android.recoveryfile.mainpresenter.MainPresenterService
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:58:9-60:38
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:67:9-69:38
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:60:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:69:13-35
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:59:13-95
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:68:13-95
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService000
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:61:9-64:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:70:9-73:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:63:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:72:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:64:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:73:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:62:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:71:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService001
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:65:9-68:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:74:9-77:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:67:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:76:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:68:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:77:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:66:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:75:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService002
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:69:9-72:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:78:9-81:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:71:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:80:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:72:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:81:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:70:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:79:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService003
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:73:9-76:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:82:9-85:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:75:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:84:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:76:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:85:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:74:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:83:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService004
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:77:9-80:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:86:9-89:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:79:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:88:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:80:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:89:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:78:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:87:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService005
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:81:9-84:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:90:9-93:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:83:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:92:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:84:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:93:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:82:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:91:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService006
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:85:9-88:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:94:9-97:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:87:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:96:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:88:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:97:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:86:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:95:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService007
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:89:9-92:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:98:9-101:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:91:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:100:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:92:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:101:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:90:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:99:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService008
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:93:9-96:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:102:9-105:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:95:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:104:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:96:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:105:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:94:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:103:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService009
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:97:9-100:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:106:9-109:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:99:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:108:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:100:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:109:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:98:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:107:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService010
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:101:9-104:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:110:9-113:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:103:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:112:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:104:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:113:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:102:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:111:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService011
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:105:9-108:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:114:9-117:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:107:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:116:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:108:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:117:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:106:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:115:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService012
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:109:9-112:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:118:9-121:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:111:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:120:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:112:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:121:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:110:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:119:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService013
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:113:9-116:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:122:9-125:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:115:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:124:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:116:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:125:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:114:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:123:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService014
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:117:9-120:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:126:9-129:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:119:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:128:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:120:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:129:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:118:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:127:13-97
 service#com.samsung.android.recoveryfile.modelfileworker.FileWorkerService015
-ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:121:9-124:86
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:130:9-133:76
 	android:enabled
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:123:13-35
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:132:13-35
 	android:process
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:124:13-83
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:133:13-73
 	android:name
-		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:122:13-97
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:131:13-97
+receiver#com.samsung.android.recoveryfile.mainpresenter.MainPresenterService$MyInstalledReceiver
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:135:9-141:20
+	android:name
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:135:19-121
+intent-filter#android.intent.action.PACKAGE_ADDED+android.intent.action.PACKAGE_REMOVED
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:136:13-140:29
+action#android.intent.action.PACKAGE_ADDED
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:137:17-78
+	android:name
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:137:25-75
+action#android.intent.action.PACKAGE_REMOVED
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:138:17-80
+	android:name
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:138:25-77
+data
+ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:139:17-50
+	android:scheme
+		ADDED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml:139:23-47
 uses-sdk
 INJECTED from E:\AndroidWorkSpace\FileRecycle\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [FileRecycle:fcpermission:unspecified] E:\AndroidWorkSpace\FileRecycle\fcpermission\build\intermediates\bundles\default\AndroidManifest.xml:8:5-10:41

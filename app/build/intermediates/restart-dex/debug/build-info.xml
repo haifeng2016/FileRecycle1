@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="23"
+    api-level="24"
     build-mode="FULL"
-    density="420dpi"
+    density="xxxhdpi"
     format="10"
-    plugin-version="2.3.2"
-    timestamp="1497190471439"
+    plugin-version="2.3.3"
+    timestamp="1498743202919"
     token="-7337479853769431436"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -18,29 +18,14 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="719" />
+        duration="1234" />
     <task
         name="verifier"
-        duration="0" />
+        duration="375" />
 
     <artifact
-        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
         type="SPLIT" />
-    <artifact
-        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\AndroidWorkSpace\FileRecycle\app\build\outputs\apk\app-debug.apk"
-        type="SPLIT_MAIN" />
     <artifact
         location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
@@ -48,40 +33,40 @@
         location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
+        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
         location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
         type="SPLIT" />
     <artifact
         location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
     <artifact
-        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
         location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
+    <artifact
+        location="E:\AndroidWorkSpace\FileRecycle\app\build\outputs\apk\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1497190471439"
+        timestamp="1498743202919"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
-        <artifact
-            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\AndroidWorkSpace\FileRecycle\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
         <artifact
             location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
@@ -89,17 +74,32 @@
             location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
+            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
             location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
             location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="E:\AndroidWorkSpace\FileRecycle\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
+        <artifact
+            location="E:\AndroidWorkSpace\FileRecycle\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

@@ -27,10 +27,10 @@ public class FileCursorWrapper extends CursorWrapper{
         long delTime = getLong(getColumnIndex(FileDBTable.Cols.DELTIME));
         Date date = new Date(delTime);
 
-        DLog.d(uuidString + " " + type + " " + srcPath + " " + delTime);
         FileBean fb = new FileBean(UUID.fromString(uuidString), type, srcPath, date);
         File f = new File(fb.getBackupPath());
         fb.setSize(f.length());
+        DLog.d("filedb generate type:" + type + " file:" + srcPath + " deltime:" + date.toString());
         return fb;
     }
 }

@@ -66,12 +66,30 @@ reply.writeNoException();
 reply.writeInt(((_result)?(1):(0)));
 return true;
 }
+case TRANSACTION_remainFdCnt:
+{
+data.enforceInterface(DESCRIPTOR);
+int _result = this.remainFdCnt();
+reply.writeNoException();
+reply.writeInt(_result);
+return true;
+}
 case TRANSACTION_openFile:
 {
 data.enforceInterface(DESCRIPTOR);
 java.lang.String _arg0;
 _arg0 = data.readString();
 int _result = this.openFile(_arg0);
+reply.writeNoException();
+reply.writeInt(_result);
+return true;
+}
+case TRANSACTION_closeFile:
+{
+data.enforceInterface(DESCRIPTOR);
+java.lang.String _arg0;
+_arg0 = data.readString();
+int _result = this.closeFile(_arg0);
 reply.writeNoException();
 reply.writeInt(_result);
 return true;
@@ -86,6 +104,14 @@ _arg1 = data.readString();
 int _result = this.backupFile(_arg0, _arg1);
 reply.writeNoException();
 reply.writeInt(_result);
+return true;
+}
+case TRANSACTION_getOpenedFile:
+{
+data.enforceInterface(DESCRIPTOR);
+java.lang.String[] _result = this.getOpenedFile();
+reply.writeNoException();
+reply.writeStringArray(_result);
 return true;
 }
 case TRANSACTION_setFileWorkerListener:
@@ -164,6 +190,23 @@ _data.recycle();
 }
 return _result;
 }
+@Override public int remainFdCnt() throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+int _result;
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+mRemote.transact(Stub.TRANSACTION_remainFdCnt, _data, _reply, 0);
+_reply.readException();
+_result = _reply.readInt();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+return _result;
+}
 @Override public int openFile(java.lang.String name) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
@@ -173,6 +216,24 @@ try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeString(name);
 mRemote.transact(Stub.TRANSACTION_openFile, _data, _reply, 0);
+_reply.readException();
+_result = _reply.readInt();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+return _result;
+}
+@Override public int closeFile(java.lang.String name) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+int _result;
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeString(name);
+mRemote.transact(Stub.TRANSACTION_closeFile, _data, _reply, 0);
 _reply.readException();
 _result = _reply.readInt();
 }
@@ -201,6 +262,23 @@ _data.recycle();
 }
 return _result;
 }
+@Override public java.lang.String[] getOpenedFile() throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+java.lang.String[] _result;
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+mRemote.transact(Stub.TRANSACTION_getOpenedFile, _data, _reply, 0);
+_reply.readException();
+_result = _reply.createStringArray();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+return _result;
+}
 @Override public void setFileWorkerListener(com.samsung.android.recoveryfile.modelfileworker.IFileWorkerListener cb) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
@@ -220,9 +298,12 @@ _data.recycle();
 static final int TRANSACTION_start = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
 static final int TRANSACTION_stop = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
 static final int TRANSACTION_available = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
-static final int TRANSACTION_openFile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
-static final int TRANSACTION_backupFile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
-static final int TRANSACTION_setFileWorkerListener = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
+static final int TRANSACTION_remainFdCnt = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
+static final int TRANSACTION_openFile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
+static final int TRANSACTION_closeFile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
+static final int TRANSACTION_backupFile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 6);
+static final int TRANSACTION_getOpenedFile = (android.os.IBinder.FIRST_CALL_TRANSACTION + 7);
+static final int TRANSACTION_setFileWorkerListener = (android.os.IBinder.FIRST_CALL_TRANSACTION + 8);
 }
 /**
      * Demonstrates some basic types that you can use as parameters
@@ -231,7 +312,10 @@ static final int TRANSACTION_setFileWorkerListener = (android.os.IBinder.FIRST_C
 public void start() throws android.os.RemoteException;
 public void stop() throws android.os.RemoteException;
 public boolean available() throws android.os.RemoteException;
+public int remainFdCnt() throws android.os.RemoteException;
 public int openFile(java.lang.String name) throws android.os.RemoteException;
+public int closeFile(java.lang.String name) throws android.os.RemoteException;
 public int backupFile(java.lang.String sname, java.lang.String dname) throws android.os.RemoteException;
+public java.lang.String[] getOpenedFile() throws android.os.RemoteException;
 public void setFileWorkerListener(com.samsung.android.recoveryfile.modelfileworker.IFileWorkerListener cb) throws android.os.RemoteException;
 }

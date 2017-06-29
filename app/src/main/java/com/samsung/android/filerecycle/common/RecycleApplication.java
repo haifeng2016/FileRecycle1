@@ -9,6 +9,15 @@ import android.app.Application;
 public class RecycleApplication extends Application {
     private static RecycleApplication application;
 
+    public RecycleApplication() {
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        application = this;
+    }
+
     public static RecycleApplication getApplication() {
         if (application == null) {
             application = new RecycleApplication();

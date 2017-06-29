@@ -1,7 +1,6 @@
 package com.samsung.android.filerecycle.common;
 
 import android.app.Fragment;
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,16 +10,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.samsung.android.recoveryfile.mainpresenter.FileBean;
 
-public abstract class BaseFragment extends Fragment {
-
-    private static final String TAG = BaseFragment.class.getSimpleName();
+public abstract class BaseFragment extends Fragment implements IFileSelected {
 
     protected Context mContext = null;
-
     protected String title;
     protected View customActionBarView;
-    protected Handler handler = new Handler(Looper.getMainLooper());
+    protected Handler mHandler = new Handler(Looper.getMainLooper());
+
+    @Override
+    public void onFileSelected(FileBean fileBean, boolean checked) {
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,7 +72,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        handler.removeCallbacksAndMessages(null);
+        mHandler.removeCallbacksAndMessages(null);
     }
 
 }

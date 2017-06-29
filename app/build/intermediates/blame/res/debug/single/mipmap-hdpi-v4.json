@@ -8,20 +8,36 @@
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\video.png"
     },
     {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\raricon.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\raricon.png"
+    },
+    {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\music.png",
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\music.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\appicon.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\appicon.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\notify.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\notify.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\videoplay.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\videoplay.png"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\other.png",
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\other.png"
     },
     {
-        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\brokenfiles.png",
-        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\brokenfiles.png"
-    },
-    {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\word.png",
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\word.png"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\settings.png",
+        "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\mipmap-hdpi\\settings.png"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\recycle.png",

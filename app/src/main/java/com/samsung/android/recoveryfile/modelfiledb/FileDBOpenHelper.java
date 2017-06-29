@@ -23,7 +23,7 @@ public class FileDBOpenHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        DLog.d("db create");
+        DLog.d("filedb create.");
         for(int i = 0; i < FileBean.TYPE.TOTAL; i++) {
             db.execSQL("create table " + FileBean.getTypeName(i) + "(" + " _id integer primary key autoincrement, " +
                     FileDBTable.Cols.UUID + ", " +

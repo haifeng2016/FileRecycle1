@@ -93,15 +93,15 @@ public class MainPresenter implements IMainPresenter {
     }
 
     @Override
-    public int setFileWatcherType(String[] type) {
+    public int setFileWatcherType(int[] type, boolean[] set) {
         if(mIMainPresenter != null)
-            return mIMainPresenter.setFileWatcherType(type);
+            return mIMainPresenter.setFileWatcherType(type, set);
 
         return 0;
     }
 
     @Override
-    public int setAutoDeleteTime(int time) {
+    public int setAutoDeleteTime(long time) {
         if(mIMainPresenter != null)
             return mIMainPresenter.setAutoDeleteTime(time);
 

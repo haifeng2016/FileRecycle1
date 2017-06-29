@@ -9,6 +9,7 @@ import android.widget.Switch;
 
 import com.samsung.android.filerecycle.R;
 import com.samsung.android.filerecycle.common.BaseFragment;
+import com.samsung.android.filerecycle.common.Util;
 
 /**
  * Created by haifeng on 2017/5/4.
@@ -24,34 +25,32 @@ public class SettingsFragment extends BaseFragment {
     Switch docswitch ;
     Switch appswitch ;
     Switch othersfilesw;
+    Switch savetime;
 
     private Switch.OnCheckedChangeListener checkedChangeListener = new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             switch (buttonView.getId()) {
                 case R.id.pic_switch:
-                    //to do something
-
+                    SettingFeatures.setSwitchState(SettingFeatures.KEY_SWITCH_PIC, buttonView.isChecked());
                     break;
                 case R.id.video_switch:
-                    //to do something
-
+                    SettingFeatures.setSwitchState(SettingFeatures.KEY_SWITCH_VIDEO, buttonView.isChecked());
                     break;
                 case R.id.audio_switch:
-                    //to do something
-
+                    SettingFeatures.setSwitchState(SettingFeatures.KEY_SWITCH_MUSIC, buttonView.isChecked());
                     break;
                 case R.id.doc_switch:
-                    //to do something
-
+                    SettingFeatures.setSwitchState(SettingFeatures.KEY_SWITCH_DOC, buttonView.isChecked());
                     break;
                 case R.id.app_switch:
-                    //to do something
-
+                    SettingFeatures.setSwitchState(SettingFeatures.KEY_SWITCH_APP, buttonView.isChecked());
                     break;
                 case R.id.others_file_switch:
-                    //to do something
-
+                    SettingFeatures.setSwitchState(SettingFeatures.KEY_SWITCH_OTHER, buttonView.isChecked());
+                    break;
+                case R.id.settings_switch:
+                    SettingFeatures.setSwitchState(SettingFeatures.KEY_KEEP_DURATION, buttonView.isChecked());
                     break;
                 default:
                     break;
@@ -71,6 +70,15 @@ public class SettingsFragment extends BaseFragment {
         docswitch =   (Switch) view.findViewById(R.id.doc_switch);
         appswitch =   (Switch) view.findViewById(R.id.app_switch);
         othersfilesw = (Switch) view.findViewById(R.id.others_file_switch);
+        savetime = (Switch) view.findViewById(R.id.settings_switch);
+
+        picswitch.setChecked(SettingFeatures.getSwitchState(SettingFeatures.KEY_SWITCH_PIC));
+        videoswitch.setChecked(SettingFeatures.getSwitchState(SettingFeatures.KEY_SWITCH_VIDEO));
+        audioswitch.setChecked(SettingFeatures.getSwitchState(SettingFeatures.KEY_SWITCH_MUSIC));
+        docswitch.setChecked(SettingFeatures.getSwitchState(SettingFeatures.KEY_SWITCH_DOC));
+        appswitch.setChecked(SettingFeatures.getSwitchState(SettingFeatures.KEY_SWITCH_APP));
+        othersfilesw.setChecked(SettingFeatures.getSwitchState(SettingFeatures.KEY_SWITCH_OTHER));
+        savetime.setChecked(SettingFeatures.getSaveTimeSwitchState(SettingFeatures.KEY_KEEP_DURATION));
 
         picswitch.setOnCheckedChangeListener(checkedChangeListener);
         videoswitch.setOnCheckedChangeListener(checkedChangeListener);
@@ -78,6 +86,9 @@ public class SettingsFragment extends BaseFragment {
         docswitch.setOnCheckedChangeListener(checkedChangeListener);
         appswitch.setOnCheckedChangeListener(checkedChangeListener);
         othersfilesw.setOnCheckedChangeListener(checkedChangeListener);
+        savetime.setOnCheckedChangeListener(checkedChangeListener);
+
+        Util.setSPBooleanValue(Util.SP_FIRST_USE, false);
 
         return view;
     }

@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 
 import com.samsung.android.filerecycle.R;
 import com.samsung.android.filerecycle.common.BaseActivity;
-import com.samsung.android.filerecycle.license.LicenseFragment;
 
 public class TermsActivity extends BaseActivity {
 

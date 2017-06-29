@@ -2,16 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:icon="@drawable/drawer_ic_settings"
         android:id="@+id/about"
         android:title="@string/about" />
 
-    <item
-        android:id="@+id/setting"
-        android:title="@string/setting" />
+    <!--<item-->
+        <!--android:id="@+id/setting"-->
+        <!--android:title="@string/setting" />-->
 
     <item
-        android:icon="@drawable/drawer_ic_samsung_members"
         android:id="@+id/contactus"
         android:title="@string/contactus" />
 

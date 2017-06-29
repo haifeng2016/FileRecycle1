@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
         android:background="@color/g"
         android:contentInsetStart="0dp"
         android:theme="@style/AppTheme.ActionBar"
@@ -20,7 +19,18 @@
         app:contentInsetStartWithNavigation="0dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:titleTextAppearance="@style/AppTheme.ActionBarTitle" />
+        app:titleTextAppearance="@style/AppTheme.ActionBarTitle" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/a"
+            android:layout_marginStart="15dp"
+            android:text="@string/app_name"/>
+    </android.support.v7.widget.Toolbar>
 
     <View
         android:id="@+id/divider"

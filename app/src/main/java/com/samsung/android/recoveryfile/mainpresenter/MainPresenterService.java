@@ -1,14 +1,18 @@
 package com.samsung.android.recoveryfile.mainpresenter;
 
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.os.AsyncTask;
 import android.os.Binder;
-import android.os.Environment;
+import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 
@@ -19,6 +23,7 @@ import com.samsung.android.recoveryfile.modelfilethumbnail.FileThumbnail;
 import com.samsung.android.recoveryfile.modelfilethumbnail.IFileThumbnail;
 import com.samsung.android.recoveryfile.modelfilethumbnail.OnFileThumbnailListener;
 import com.samsung.android.recoveryfile.modelfilewatcher.FileWatcher;
+import com.samsung.android.recoveryfile.modelfilewatcher.FileWatcherObserver;
 import com.samsung.android.recoveryfile.modelfilewatcher.IFileWatcher;
 import com.samsung.android.recoveryfile.modelfilewatcher.OnFileWatcherListener;
 import com.samsung.android.recoveryfile.modelfileworker.FileWorker;
@@ -27,9 +32,12 @@ import com.samsung.android.recoveryfile.modelfileworker.OnFileWorkerListener;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -39,40 +47,25 @@ import java.util.Set;
 public class MainPresenterService extends Service implements IMainPresenter {
 
     private static String APP_CACHE_PATH;
-    private Set<String> fileWatcherPaths = new HashSet<>();
-    private static final String[] FILE_WATCHER_PATHS = new String[] {
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath()+"/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath()+"/Camera/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_ALARMS).getAbsolutePath()+"/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).getAbsolutePath()+"/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()+"/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES).getAbsolutePath()+"/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).getAbsolutePath()+"/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_NOTIFICATIONS).getAbsolutePath()+"/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath()+"/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PODCASTS).getAbsolutePath()+"/",
-             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES).getAbsolutePath()+"/",
-             Environment.getExternalStorageDirectory().getPath()+"/backups/",
-             Environment.getExternalStorageDirectory().getPath()+"/",
-    };
-
-    private IFileWatcher mIFileWatcher = null;
-    private IFileWorker mIFileWorker = null;
-    private IFileNameDB mIFileNameDB = null;
-    private IFileThumbnail mIFileThumbnail = null;
+    private static IFileWatcher mIFileWatcher = null;
+    private static IFileWorker mIFileWorker = null;
+    private static IFileNameDB mIFileNameDB = null;
+    private static IFileThumbnail mIFileThumbnail = null;
+    private long mFileReserverTime = -1;
     private OnMainPresenterListener mMainPresenterListner = null;
+    private Handler mHandler = new Handler(Looper.getMainLooper());
     private final IBinder binder = new MainPresenterBinder();
-    private Object objSync = new Object();
+    private static PackageManager mPackageManager = null;
+    private static Map<String, String>mPackageMap = new HashMap<>();
 
     private ArrayList<ArrayList<FileBean>> mFileLists = new ArrayList<ArrayList<FileBean>>();
 
     private boolean mReady = false;
-    private int mOpenFileCnt = 0;
     private int mRecoverFileCnt = 0;
-
-    private boolean mOpenFileFinish = false;
-    private boolean mOpenInitFinished = false;
     private boolean mRecoverFileFinish = false;
+
+    private static final int PACKAGE_ADD      = 0x01;
+    private static final int PACKAGE_REMOVE   = 0x02;
 
     public class MainPresenterBinder extends Binder {
         public MainPresenterService getService() {
@@ -83,10 +76,13 @@ public class MainPresenterService extends Service implements IMainPresenter {
     @Override
     public void onCreate() {
         super.onCreate();
+        DLog.d("mpresent oncreate.");
         Context context = getApplicationContext();
         APP_CACHE_PATH = context.getCacheDir().getAbsolutePath();
-        File dir;
+        mPackageManager = getPackageManager();
 
+        mFileReserverTime = -1;
+        File dir;
         for(int i = 0; i < FileBean.TYPE.TOTAL; i++) {
             dir = new File(APP_CACHE_PATH + FileBean.getTypeName(i));
             dir.mkdir();
@@ -94,22 +90,30 @@ public class MainPresenterService extends Service implements IMainPresenter {
         dir = new File(APP_CACHE_PATH + "thumbnails");
         dir.mkdir();
 
+        mHandler.postDelayed(timeScheduleDelete, 2000);
+
         mIFileNameDB = new FileNameDB(context);
         mIFileNameDB.start();
 
         initFileList();
 
-        mIFileWatcher = new FileWatcher();
-        addWatcherPath();
+        if(Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP ||
+                Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP_MR1 ||
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+            mIFileWatcher = new FileWatcherObserver();
+        } else {
+            mIFileWatcher = new FileWatcher();
+        }
+        mIFileWorker = new FileWorker();
+        mIFileWorker.start(context, new MainOnFileWorkerListener());
+
         mIFileWatcher.setFileListener(new MainOnFileWatcherListener());
+        addWatcherPath();
         mIFileWatcher.start();
 
         mIFileThumbnail = new FileThumbnail();
         mIFileThumbnail.setFileThumbnailListener(new MainOnFileThumbnailListener());
         mIFileThumbnail.start();
-
-        mIFileWorker = new FileWorker();
-        mIFileWorker.start(context, new MainOnFileWorkerListener());
     }
 
     private void initFileList() {
@@ -124,12 +128,6 @@ public class MainPresenterService extends Service implements IMainPresenter {
     }
 
     private void addWatcherPath() {
-        for(String s : FILE_WATCHER_PATHS){
-            DLog.d("add watch path:" + s);
-            fileWatcherPaths.add(s);
-            mIFileWatcher.setWatcherPath(s);
-        }
-
         String columns[] = new String[] {
             MediaStore.Images.Media.BUCKET_ID,
             MediaStore.Images.Media.DATA,
@@ -149,14 +147,55 @@ public class MainPresenterService extends Service implements IMainPresenter {
                     set.add(bucketId);
                     if(path != null){
                         String parent = path.substring(0, path.lastIndexOf("/")+1);
-                        if(!fileWatcherPaths.contains(parent)) {
-                            DLog.d("add albume watch path:" + parent);
-                            fileWatcherPaths.add(parent);
-                            mIFileWatcher.setWatcherPath(parent);
-                        }
+                        DLog.d("mpresent add albume watch path:" + parent);
+                        mIFileWatcher.setWatcherPath(parent, 1);
                     }
                 }
             }while(cursor.moveToNext());
+        }
+
+        if(mPackageManager != null){
+            List<ApplicationInfo> apps = mPackageManager.getInstalledApplications(0);
+            if(apps != null){
+                for(ApplicationInfo app : apps){
+                    if((app.flags & ApplicationInfo.FLAG_SYSTEM) == 0){
+                        DLog.d("mpresent add app " + app.sourceDir + " package name " + app.packageName);
+                        //mIFileWatcher.setWatcherPath(app.sourceDir, 0);
+                        if(mPackageMap.get(app.packageName) == null) {
+                            mPackageMap.put(app.packageName, app.sourceDir);
+                            mIFileWorker.openFile(app.sourceDir);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public static class MyInstalledReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String packageName = intent.getDataString();
+            packageName = packageName.substring(packageName.lastIndexOf(":") + 1);
+            if(intent.getAction().equals("android.intent.action.PACKAGE_ADDED")){
+                DLog.d("mpresent broadcast apk installed: " + packageName);
+                try {
+                    ApplicationInfo info = mPackageManager.getApplicationInfo(packageName, 0);
+                    if((info.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
+                        if (mPackageMap.get(info.sourceDir) == null) {
+                            mPackageMap.put(packageName, info.sourceDir);
+                            mIFileWorker.openFile(info.sourceDir);
+                        }
+                    }
+                } catch (PackageManager.NameNotFoundException e) {
+                    DLog.d("mpresent broadcast apk name no found: " + packageName);
+                }
+            }else if(intent.getAction().equals("android.intent.action.PACKAGE_REMOVED")){
+                DLog.d("mpresent broadcast apk uninstalled: " + packageName);
+                if(mPackageMap.get(packageName) != null) {
+                    final FileBean fb = new FileBean(FileBean.TYPE.APP, mPackageMap.get(packageName), new GregorianCalendar().getTime(), packageName);
+                    mIFileWorker.backupFile(fb);
+                }
+            }
         }
     }
 
@@ -201,8 +240,7 @@ public class MainPresenterService extends Service implements IMainPresenter {
             if(m == null)
                 continue;
 
-            DLog.d("recover " + m.getUuid() + " " + m.getSrcPath());
-            DLog.d("fb" + m.getName() + " " + m.getDelTime().toString() + " " + m.getSize());
+            DLog.d("ui recover file:" + m.getSrcPath() + " " + m.getDelTime().toString() + " " + m.getSize());
             mIFileNameDB.delteFileName(m);
             mFileLists.get(m.getType()).remove(m);
             mRecoverFileCnt++;
@@ -222,7 +260,7 @@ public class MainPresenterService extends Service implements IMainPresenter {
             if(m == null)
                 continue;
 
-            DLog.d("deleteFile " + m.getUuid() + " " + m.getSrcPath());
+            DLog.d("ui delete file:" + m.getSrcPath() + " " + m.getDelTime().toString() + " " + m.getSize());
             mIFileNameDB.delteFileName(m);
             mFileLists.get(m.getType()).remove(m);
             File f = new File(m.getBackupPath());
@@ -238,129 +276,150 @@ public class MainPresenterService extends Service implements IMainPresenter {
     }
 
     @Override
-    public int setFileWatcherType(String[] type) {
+    public int setFileWatcherType(int[] type, boolean[] set) {
+        for(int i = 0; i < FileBean.TYPE.TOTAL; i++){
+            if(i >= type.length || i >= set.length)
+                return 0;
+            mIFileWatcher.setWatchType(type[i], set[i]);
+            mIFileWatcher.startFullScan();
+        }
+
         return 0;
     }
 
     @Override
-    public int setAutoDeleteTime(int time) {
+    public int setAutoDeleteTime(long time) {
+        mFileReserverTime = time;
         return 0;
-    }
-
-    public static String getFileBackupDir() {
-        return APP_CACHE_PATH;
     }
 
     @Override
     public int setPresenterListener(OnMainPresenterListener listener) {
         mMainPresenterListner = listener;
+        if(mReady){
+            mMainPresenterListner.onReady(mReady);
+        }
         return 0;
     }
 
     class MainOnFileWatcherListener implements OnFileWatcherListener {
         @Override
-        public void onFileChange(String path, int mode) {
-            int type = FileBean.fileTypeFilter(path);
-            if(type == -1)
-                return;
-
+        public int onFileChange(String path, int mode, FileBean fb) {
+            int ret = 0;
             switch (mode){
                 case OnFileWatcherListener.FILE_CREATE:
-                    DLog.d("main present file create");
-                    mIFileWorker.openFile(path);
+                    DLog.d("mpresent filewatch create cb:" + path);
+                    ret = mIFileWorker.openFile(path);
                     break;
                 case OnFileWatcherListener.FILE_DELETE:
-                    final FileBean fb = new FileBean(type, path, new GregorianCalendar().getTime());
-                    DLog.d("fb" + fb.getName() + " " + fb.getDelTime().toString() + " " + fb.getSize());
-                    mIFileWorker.backupFile(fb);
-                    mIFileNameDB.saveFileName(fb);
-                    mFileLists.get(fb.getType()).add(fb);
-                    DLog.d("backup file " + fb.getBackupPath());
+                    DLog.d("mpresent filewatch delete cb:" + path + " " + fb.getDelTime().toString());
+                    ret = mIFileWorker.backupFile(fb);
+                    break;
+                case OnFileWatcherListener.FILE_CLOSE:
+                    DLog.d("mpresent filewatch close cb:" + path);
+                    ret = mIFileWorker.closeFile(path);
                     break;
             }
-        }
-    }
-
-    class MainOnFileThumbnailListener implements OnFileThumbnailListener{
-        @Override
-        public void onFileThumbnailCreate(FileBean fb) {
-            DLog.d("Thumbnail create " + fb.getThumbnailPath());
-            if(mMainPresenterListner != null) {
-                mMainPresenterListner.onBackupFiles(fb);
-            }
+            return ret;
         }
     }
 
     class MainOnFileWorkerListener implements OnFileWorkerListener {
         @Override
         public void onReady() {
-            new AsyncTask<Void, Void, Void>(){
-                @Override
-                protected Void doInBackground(Void... params) {
-                    mOpenFileFinish = false;
-                    for(String path : fileWatcherPaths) {
-                        File dir = new File(path);
-                        if (dir != null && dir.exists()) {
-                            String[] names = dir.list();
-                            if (names != null) {
-                                for (String s : names) {
-                                    int type = FileBean.fileTypeFilter(s);
-                                    if(type != -1) {
-                                        mIFileWorker.openFile(path + s);
-                                        DLog.d("open file in main present");
-                                        synchronized(objSync){
-                                            mOpenFileCnt++;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    mOpenFileFinish = true;
-                    return null;
-                }
+            if(mReady)
+                return;
 
-            }.execute();
-
+            mIFileWatcher.startFullScan();
             mReady = true;
-            if(mMainPresenterListner != null)
+
+            if(mMainPresenterListner != null) {
+                DLog.d("mpresent fileworker ready report to ui");
                 mMainPresenterListner.onReady(mReady);
+            }
         }
 
         @Override
         public void onFileOpened(String name, int retval) {
-            synchronized(objSync){
-                mOpenFileCnt--;
-                DLog.d("onFileOpened " + mOpenFileCnt);
-                if(mOpenFileFinish && mOpenFileCnt==0)
-                    mReady = true;
-            }
-            if(mReady && !mOpenInitFinished && mMainPresenterListner!=null) {
-                mOpenInitFinished = true;
-            }
+            DLog.d("mpresent filework open cb:" + name + " ret:" + retval);
         }
 
         @Override
         public void onFileBackuped(FileBean fb, int retval) {
-            DLog.d("onFileBackuped" + fb.getSrcPath());
+            DLog.d("mpresent filework backup cb:" + fb.getSrcPath() + " ret:" + retval);
+            if(retval < 0){
+                DLog.d("mpresent filework backup failed:" + fb.getSrcPath());
+                return;
+            }
+
             File f = new File(fb.getBackupPath());
             fb.setSize(f.length());
             if(fb.getType() == FileBean.TYPE.IMG) {
                 mIFileThumbnail.createThumbnail(fb);
             } else {
+                mIFileNameDB.saveFileName(fb);
+                mFileLists.get(fb.getType()).add(fb);
                 if(mMainPresenterListner != null) {
                     mMainPresenterListner.onBackupFiles(fb);
                 }
             }
-
         }
 
         @Override
         public void onFileRecovered(FileBean fb, int retval) {
+            DLog.d("mpresent filework recover cb:" + fb.getSrcPath() + " ret:" + retval);
             mRecoverFileCnt--;
             if(mRecoverFileFinish && mRecoverFileCnt == 0)
                 if(mMainPresenterListner != null)
                     mMainPresenterListner.onRecoverFiles(0);
         }
+    }
+
+    class MainOnFileThumbnailListener implements OnFileThumbnailListener{
+        @Override
+        public void onFileThumbnailCreate(FileBean fb) {
+            DLog.d("mpresent Thumbnail createcb:" + fb.getThumbnailPath());
+            mIFileNameDB.saveFileName(fb);
+            mFileLists.get(fb.getType()).add(fb);
+            if(mMainPresenterListner != null) {
+                mMainPresenterListner.onBackupFiles(fb);
+            }
+        }
+    }
+
+    private Runnable timeScheduleDelete = new Runnable() {
+        @Override
+        public void run() {
+            if(mFileReserverTime > 0) {
+                DLog.d("mpresent schedule del start.");
+                boolean del = false;
+                Date current = new GregorianCalendar().getTime();
+                long time = current.getTime();
+                for (List<FileBean> list : mFileLists) {
+                    for (FileBean fb : list) {
+                        if ((time - fb.getDelTime().getTime()) > mFileReserverTime){
+                            del = true;
+                            DLog.d("mpresent schedule delete file:" + fb.getSrcPath() + " " + fb.getDelTime().toString() + " " + fb.getSize());
+                            mIFileNameDB.delteFileName(fb);
+                            list.remove(fb);
+                            File f = new File(fb.getBackupPath());
+                            f.delete();
+                            if(fb.getType() == FileBean.TYPE.IMG) {
+                                f = new File(fb.getThumbnailPath());
+                                f.delete();
+                            }
+                        }
+                    }
+                }
+
+                if(mMainPresenterListner != null && del)
+                    mMainPresenterListner.onDeleteFiles(0);
+            }
+            mHandler.postDelayed(this, 60000);
+        }
+    };
+
+    public static String getFileBackupDir() {
+        return APP_CACHE_PATH;
     }
 }

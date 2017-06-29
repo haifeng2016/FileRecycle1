@@ -12,7 +12,10 @@ interface IFileWorkerService {
     void start();
     void stop();
     boolean available();
+    int remainFdCnt();
     int openFile(String name);
+    int closeFile(String name);
     int backupFile(String sname, String dname);
+    String[] getOpenedFile();
     void setFileWorkerListener(IFileWorkerListener cb);
 }

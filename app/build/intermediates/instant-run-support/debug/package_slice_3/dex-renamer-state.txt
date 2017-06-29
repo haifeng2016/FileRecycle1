@@ -1,4 +1,4 @@
-#Sun Jun 11 18:48:00 CST 2017
+#Thu Jun 29 21:33:32 CST 2017
 base.0=E\:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_3
 renamed.0=classes.dex
 file.0=E\:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_3\\classes.dex

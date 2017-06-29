@@ -21,23 +21,23 @@ public class FileNameDB implements IFileNameDB {
     private Context mContext;
 
     public FileNameDB(Context context) {
-        DLog.d("File DB create");
+        DLog.d("filedb oncreate.");
         mContext = context;
     }
 
     @Override
     public void start() {
-
+        DLog.d("filedb start.");
     }
 
     @Override
     public void stop() {
-
+        DLog.d("filedb stop.");
     }
 
     @Override
     public int saveFileName(FileBean node) {
-        DLog.d("db node write to type " + node.getType());
+        DLog.d("filedb insert type:" + node.getType() + " name:" + node.getSrcPath());
 
         String tableName = node.typeName();
         if(tableName == null)
@@ -59,7 +59,7 @@ public class FileNameDB implements IFileNameDB {
 
     @Override
     public int delteFileName(FileBean node) {
-        DLog.d("db delete " + node.getType() + " " + node.getUuid().toString());
+        DLog.d("filedb remove type:" + node.getType() + " name:" + node.getSrcPath());
 
         String tableName = node.typeName();
         if(tableName == null)
@@ -91,7 +91,7 @@ public class FileNameDB implements IFileNameDB {
 
     @Override
     public List<FileBean> getFileName(int type) {
-        DLog.d("db read");
+        DLog.d("filedb get list type:" + type);
 
         String tableName = FileBean.getTypeName(type);
         if(tableName == null)

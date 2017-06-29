@@ -30,8 +30,8 @@
 
         <ImageView
             android:id="@+id/musicicon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="58dp"
+            android:layout_height="50dp"
             android:layout_toRightOf="@id/musicselecectcheckbox"
             android:layout_centerVertical="true"
             android:background="@mipmap/music"/>
@@ -40,13 +40,27 @@
             android:id="@+id/musicsize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="45KB"
-            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_toStartOf="@+id/size"
+            android:text="45"
+            android:textColor="@color/a"
+            android:alpha="0.5"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:textSize="12sp"
+            android:text="KB"
+            android:textColor="@color/a"
+            android:alpha="0.5"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true" />
 
         <LinearLayout
-            android:id="@+id/musicname_time"
+            android:id="@+id/musictitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -66,14 +80,14 @@
                 android:text="成都"/>
 
             <TextView
-                android:id="@+id/author"
+                android:id="@+id/delete_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/b"
                 android:alpha="0.8"
                 android:maxLines="1"
                 android:ellipsize="end"
-                android:text="赵雷" />
+                android:text="17/6/17 19:25" />
         </LinearLayout>
 
     </RelativeLayout>

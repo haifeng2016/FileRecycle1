@@ -8,6 +8,7 @@ interface IFileWorkerListener {
      * Demonstrates some basic types that you can use as parameters
      * and return values in AIDL.
      */
-    void onFileOpened(String name);
-    void onFileBackuped(String name);
+    void onFileOpened(String name, int retval);
+    void onFileBackuped(String name, int retval);
+    void onRemainFdCnt(int workIndex, int cnt);
 }

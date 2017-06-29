@@ -21,6 +21,11 @@ public class FileBean{
         this(UUID.randomUUID(), t, path, time);
     }
 
+    public FileBean(int t, String path, Date time, String n){
+        this(UUID.randomUUID(), t, path, time);
+        name = n;
+    }
+
     public UUID getUuid() {
         return uuid;
     }
@@ -78,28 +83,6 @@ public class FileBean{
             default:
                 return null;
         }
-    }
-
-
-    public static int fileTypeFilter(String sname){
-        if(sname == null)
-            return -1;
-
-        String prefix = sname.substring(sname.lastIndexOf(".") + 1);
-        if(prefix.equals("jpg") || prefix.equals("png") || prefix.equals("tif")){
-            return FileBean.TYPE.IMG;
-        }else if(prefix.equals("mp3") || prefix.equals("wma") || prefix.equals("ogg")){
-            return FileBean.TYPE.MUSIC;
-        }else if(prefix.equals("mp4") || prefix.equals("avi")){
-            return FileBean.TYPE.VIDEO;
-        }else if(prefix.equals("pdf") || prefix.equals("xls") || prefix.equals("xlsx") || prefix.equals("ppt") || prefix.equals("pptx")
-                || prefix.equals("doc") || prefix.equals("docx")  || prefix.equals("txt")){
-            return FileBean.TYPE.DOC;
-        }else if(prefix.equals("zip") || prefix.equals("rar")){
-            return FileBean.TYPE.OTHER;
-        }
-
-        return -1;
     }
 
     private void setSubType(){
@@ -172,5 +155,33 @@ public class FileBean{
         public static final String DOC    = "document";
         public static final String APP    = "application";
         public static final String OTHER  = "other";
+    }
+
+    public static int fileTypeFilter(String sname){
+        if(sname == null)
+            return -1;
+
+        String name = sname.substring(sname.lastIndexOf("/") + 1);
+        if(name.startsWith(".")){
+            return -1;
+        }
+
+        String prefix = sname.substring(sname.lastIndexOf(".") + 1);
+        if((prefix.equals("jpg") || prefix.equals("png") || prefix.equals("tif"))) {
+            return FileBean.TYPE.IMG;
+        } else if(prefix.equals("mp3") || prefix.equals("wma") || prefix.equals("ogg")) {
+            return FileBean.TYPE.MUSIC;
+        } else if(prefix.equals("mp4") || prefix.equals("avi")) {
+            return FileBean.TYPE.VIDEO;
+        } else if(prefix.equals("pdf") || prefix.equals("xls") || prefix.equals("xlsx") || prefix.equals("ppt") || prefix.equals("pptx")
+                || prefix.equals("doc") || prefix.equals("docx")  || prefix.equals("txt")) {
+            return FileBean.TYPE.DOC;
+        } else if (prefix.equals("apk")) {
+            return FileBean.TYPE.APP;
+        } else if(prefix.equals("zip") || prefix.equals("rar")) {
+            return FileBean.TYPE.OTHER;
+        }
+
+        return -1;
     }
 }

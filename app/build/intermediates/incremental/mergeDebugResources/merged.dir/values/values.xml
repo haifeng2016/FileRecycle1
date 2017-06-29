@@ -659,7 +659,7 @@
     <string name="app_name">S 回收站</string>
     <string name="applications">应用程序</string>
     <string name="applications_item">保护卸载的应用</string>
-    <string name="audio">音频</string>
+    <string name="audio">音乐</string>
     <string name="audio_item">mp3,wma,ogg等</string>
     <string name="cancel">取消</string>
     <string name="contactus">联系我们</string>
@@ -679,10 +679,17 @@
     <string name="prompt_we_need_camera">S 回收站只有获得相应的权限才可正常使用。</string>
     <string name="recycle">恢复</string>
     <string name="search_menu_title">Search</string>
+    <string name="select_app">选取应用程序</string>
+    <string name="select_doc">选取文档</string>
+    <string name="select_image">选取图片</string>
     <string name="select_items">选择项目</string>
+    <string name="select_music">选取音乐</string>
     <string name="select_pic">选取文件</string>
+    <string name="select_video">选取视频</string>
+    <string name="set_file_save_time">保存时长</string>
+    <string name="set_file_save_time_title">保存时间从1天延长到1个月</string>
     <string name="setting">设置</string>
-    <string name="settings_select_header">您想要S 回收站保存什么？可以打开或关闭下面6种文件的开关来进行相应文件的保存或忽略。请注意，S 回收站最多只保存1G大小的文件，同时超过10天的文件也会被自动删除。</string>
+    <string name="settings_select_header">您想要S 回收站保存什么？可以打开下面6个开关来进行相应文件的保存。所有文件的默认保存时长为1天，超过后会彻底删除。</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="termsandconditions">服务条款</string>
     <string name="update">更新</string>

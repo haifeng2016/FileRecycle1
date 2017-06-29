@@ -31,10 +31,12 @@ public class FileThumbnail implements IFileThumbnail {
 
     public FileThumbnail(){
         super();
+        DLog.d("filethumbnail oncreate.");
     }
 
     @Override
     public void start() {
+        DLog.d("filethumbnail start.");
         executorService = Executors.newCachedThreadPool();
         mHandler = new MyMainThreadHandler(Looper.getMainLooper());
     }
@@ -59,7 +61,8 @@ public class FileThumbnail implements IFileThumbnail {
         if(fb == null)
             return -1;
 
-        if(!(fb.getType() == FileBean.TYPE.IMG))
+        DLog.d("filethumbnail create:" + fb.getSrcPath());
+        if(fb.getType() != FileBean.TYPE.IMG)
             return -1;
 
         mCreateMap.put(fb.getBackupPath(), fb);
@@ -81,6 +84,7 @@ public class FileThumbnail implements IFileThumbnail {
             switch(msg.what) {
                 case CREATTHUMBNAIL:
                     FileBean fb = mCreateMap.get(name);
+                    mCreateMap.remove(name);
                     if(fb != null && mFileThumbnailListener != null){
                         mFileThumbnailListener.onFileThumbnailCreate(fb);
                     }
@@ -102,7 +106,7 @@ public class FileThumbnail implements IFileThumbnail {
 
         @Override
         public void run() {
-            DLog.d("strat to create thumbnail " + inPath + " " + OutPath);
+            DLog.d("filethumbnail threadpoll create:" + inPath + " : " + OutPath);
             generateThumbnail(inPath, OutPath);
             Message msg = mHandler.obtainMessage();
             msg.obj = inPath;
@@ -117,22 +121,22 @@ public class FileThumbnail implements IFileThumbnail {
         Bitmap bitmap = BitmapFactory.decodeFile(inpath, options);
         options.inJustDecodeBounds = false;
 
-        DLog.d("w " + options.outWidth + " h " + options.outHeight);
+        DLog.d("filethumbnail w " + options.outWidth + " h " + options.outHeight);
         int be = (int)(options.outHeight / (float)200);
         if(be <= 0)
             be = 1;
         options.inSampleSize = be;
 
-        DLog.d("decode file " + inpath);
+        DLog.d("filethumbnail decode file " + inpath);
         bitmap = BitmapFactory.decodeFile(inpath, options);
         if(bitmap==null) {
-            DLog.e("inpath is not correct " + inpath);
+            DLog.e("filethumbnail inpath is not correct " + inpath);
             return;
         }
 
         int w = bitmap.getWidth();
         int h = bitmap.getHeight();
-        DLog.d("w " + w + " h " + h);
+        DLog.d("filethumbnail w " + w + " h " + h);
 
         bitmap = ThumbnailUtils.extractThumbnail(bitmap, 200, 200, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
 
