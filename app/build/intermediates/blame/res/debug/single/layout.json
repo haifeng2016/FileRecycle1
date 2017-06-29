@@ -40,12 +40,12 @@
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\view_recycler_type_layout.xml"
     },
     {
-        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_action_menu_item_layout.xml"
-    },
-    {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_show_video.xml",
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_show_video.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
@@ -88,12 +88,12 @@
         "source": "E:\\AndroidWorkSpace\\FileRecycle\\app\\src\\main\\res\\layout\\fragment_about.xml"
     },
     {
-        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_select_dialog_material.xml"
-    },
-    {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
         "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\Administrator.ADMIN-20170608R\\.android\\build-cache\\72a8fdf585fe6cf853b0346da4de7014ddd91bd8\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "E:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_show_app.xml",

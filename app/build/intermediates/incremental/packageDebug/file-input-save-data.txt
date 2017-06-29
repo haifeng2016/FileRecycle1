@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Jun 29 21:33:33 CST 2017
+#Thu Jun 29 22:57:29 CST 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=E\:\\AndroidWorkSpace\\FileRecycle\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\tw_ic_ab_back_mtrl.png
